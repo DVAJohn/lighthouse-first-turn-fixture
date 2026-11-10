@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Starts a child that hangs. Its arguments include a batch ID only visible in the child's command line.
+batch=$(od -An -N4 -tx4 /dev/urandom | tr -d ' \n')
+python3 "$(dirname "$0")/child.py" --mode reconcile --batch "$batch" &
+wait

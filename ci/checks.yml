@@ -1,0 +1,12 @@
+# CI for the donor tools
+name: checks
+on: [pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test
+        run: npm test
+        env:
+          retries: 2
