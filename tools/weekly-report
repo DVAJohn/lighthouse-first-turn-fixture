@@ -1,0 +1,9 @@
+#!/bin/sh
+# Writes reports/weekly.md from notes/week.md. Needs the workspace setting REPORT_TEAM.
+if [ -z "${REPORT_TEAM:-}" ]; then
+  echo "weekly-report: REPORT_TEAM is not set in this workspace's environment (report_team_not_configured)" >&2
+  exit 3
+fi
+mkdir -p reports
+{ echo "# Weekly report: $REPORT_TEAM"; sed 's/^/- /' notes/week.md; } > reports/weekly.md
+echo "wrote reports/weekly.md"
