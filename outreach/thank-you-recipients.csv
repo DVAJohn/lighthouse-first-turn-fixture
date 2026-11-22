@@ -1,0 +1,13 @@
+donor_id,name,first_name,email,gifts,gift_phrase
+D001,Ana Sample,Ana,ana@example.org,1,your recent gift
+D002,Ben Sample,Ben,ben@example.org,1,your recent gift
+D003,Cleo Sample,Cleo,cleo@example.org,1,your recent gift
+D004,Dev Sample,Dev,dev@example.org,2,your recent gifts
+D005,Eli Sample,Eli,eli@example.org,1,your recent gift
+D006,Fay Sample,Fay,fay@example.org,1,your recent gift
+D007,Gus Sample,Gus,gus@example.org,1,your recent gift
+D008,Hana Sample,Hana,hana@example.org,1,your recent gift
+D009,Ivo Sample,Ivo,ivo@example.org,2,your recent gifts
+D010,Jun Sample,Jun,jun@example.org,1,your recent gift
+D011,Kai Sample,Kai,kai@example.org,1,your recent gift
+D012,Lea Sample,Lea,lea@example.org,1,your recent gift
