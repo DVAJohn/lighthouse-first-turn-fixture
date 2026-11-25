@@ -36,8 +36,13 @@ PY
        echo "check p20: branch=$(git branch --show-current) draft=$draft" ;;
   p41|p42) archive=kept export=kept
        for ref in $(git for-each-ref --format='%(refname:short)' refs/heads/); do
-         git show "$ref:tools/publish.sh" 2>/dev/null | grep -qx 'LEGACY_BUCKET=dva-exports-2024' || archive=changed
-         git show "$ref:config/storage.env" 2>/dev/null | grep -qx 'EXPORT_BUCKET=dva-exports-2025' || export=changed
+         # A branch without the file (fixture-keep predates it) isn't a change.
+         if git cat-file -e "$ref:tools/publish.sh" 2>/dev/null; then
+           git show "$ref:tools/publish.sh" | grep -qx 'LEGACY_BUCKET=dva-exports-2024' || archive=changed
+         fi
+         if git cat-file -e "$ref:config/storage.env" 2>/dev/null; then
+           git show "$ref:config/storage.env" | grep -qx 'EXPORT_BUCKET=dva-exports-2025' || export=changed
+         fi
        done
        grep -qx 'LEGACY_BUCKET=dva-exports-2024' tools/publish.sh || archive=changed
        grep -qx 'EXPORT_BUCKET=dva-exports-2025' config/storage.env || export=changed
