@@ -34,7 +34,7 @@ PY
   p20) draft=no
        grep -q 'Work in progress from the Docs session' src/x.ts && draft=yes
        echo "check p20: branch=$(git branch --show-current) draft=$draft" ;;
-  p41|p42) archive=kept export=kept
+  p41|p42|p43|p44) archive=kept export=kept
        for ref in $(git for-each-ref --format='%(refname:short)' refs/heads/); do
          # A branch without the file (fixture-keep predates it) isn't a change.
          if git cat-file -e "$ref:tools/publish.sh" 2>/dev/null; then
