@@ -3,6 +3,7 @@
 Things to remember when working on the donor tools.
 
 - Duplicate check runs before every appeal.
+- Donor exports must use UTC dates (John Davis, November 26, 2026).
 
 ## Weekly report
 
